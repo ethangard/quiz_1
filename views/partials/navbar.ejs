@@ -1,0 +1,31 @@
+<nav>
+  <form action="/sign_out" method="POST">
+    <ul class="nav-container">
+      <li>
+        <a href="/clucks">
+          <img
+            src="/images/chicken_home.png"
+            alt=""
+            srcset=""
+            class="home-logo"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="/clucks/new" class="btn btn-secondary">Cluck!</a>
+      </li>
+      <% if (username) { %>
+      <li>
+        <span class="nav-text"><%= username %></span>
+      </li>
+      <li>
+        <button type="submit" class="btn btn btn-secondary">Sign Out</button>
+      </li>
+      <% } else { %>
+      <li>
+        <a href="/sign_in" class="btn btn-secondary">Sign In</a>
+      </li>
+      <% } %>
+    </ul>
+  </form>
+</nav>

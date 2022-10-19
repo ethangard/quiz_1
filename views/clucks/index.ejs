@@ -1,0 +1,58 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+
+<div class="card-index-container">
+
+
+    <div class="cards">
+    <% for(let cluck of data) { %>
+    <div class="card mb-4 card-index">
+      <div class="img-container">
+        <img
+          src="/images/chicken_logo.png"
+          alt="Chicken Logo"
+          class="chicken_show"
+        />
+      </div>
+      <div class="content-container">
+
+       
+
+
+        <h5> <%- cluck.username %> &#x2022 <% var currMs = (Date.now() - cluck.created_at) %>
+           <% var currMin = Math.floor((Date.now() - cluck.created_at)/60000) %>
+           <% var currHour = Math.floor((Date.now() - cluck.created_at)/3600000) %>
+           <% var currDays = Math.floor((Date.now() - cluck.created_at)/8640000000) %>
+           <% var currWeeks = Math.floor((Date.now() - cluck.created_at)/8640000000) %>
+
+          <% if (currMs < 60000 ) { %>
+            <%- "Just Now" %> 
+          <% } else if (currMs < 3600000){ %>
+            <%- currMin %> minutes ago 
+          <% } else if (currMs < 8640000000) { %>
+            <%- currHour %> hours ago
+          <% } else if (currMs < 60480000000) { %>
+            <%- currDays %> days ago
+            <% } else if (currMs < 423360000000) { %>
+              <%- currWeeks %> weeks ago
+           <% } %>
+          
+        </h5>
+            
+        <p><%- cluck.content %></p>
+            <% if (cluck.image_url) { %>
+                  <img
+                    src="<%- cluck.image_url %>"
+                    alt="User Uploaded Image"
+                    srcset=""
+                    class="show-cluck-image"
+                  />
+            <% } %>      
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>
+<%- include('../partials/footer.ejs') %>
+
+

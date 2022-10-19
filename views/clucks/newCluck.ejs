@@ -1,0 +1,40 @@
+<%- include('../partials/header.ejs') %> <%- include('../partials/navbar.ejs')
+%>
+
+<div class="card mb-4 form-group card-form">
+  <div class="card-body new-cluck">
+    <% if (username) { %>
+    <form action="/clucks" method="post" class="new-cluck">
+      <label for="content">Content</label>
+      <textarea
+        name="content"
+        id="content"
+        cols="30"
+        rows="4"
+        placeholder="Whatchoo cluckin 'bout?"
+      ></textarea>
+      <label for="input_url">Image Url</label>
+      <input
+        type="text"
+        name="image_url"
+        id="image_url"
+        placeholder="https://i.imgur.com/qM6KaEy.gifv"
+      />
+      <div class="float-right">
+        <input
+          type="submit"
+          class="btn btn-outline-secondary new-cluck-btn"
+          value="Cluck!"
+        />
+      </div>
+    </form>
+    <% } else { %>
+
+    <div class="card mb-4 card-index">
+      <h3>Please Sign In Above to Create Clucks! 🐥</h3>
+    </div>
+    <% } %>
+  </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>

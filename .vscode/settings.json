@@ -1,0 +1,24 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "homework_4",
+      "database": "cohorts",
+      "username": "ethangard",
+      "password": "babki123$"
+    },
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "clucks",
+      "database": "clucker",
+      "username": "ethangard",
+      "password": "babki123$"
+    }
+  ]
+}

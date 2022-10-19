@@ -1,0 +1,25 @@
+<%- include('../partials/header.ejs') %> <%- include('../partials/navbar.ejs')
+%>
+
+<form action="/sign_in" method="POST">
+  <div class="card mb-4 form-group card-body sign-in-form">
+    <label for="username" class="username-label">Username</label>
+    <input
+      type="text"
+      name="username"
+      id="username"
+      placeholder="e.g. Madam Welminster"
+      class="username"
+    />
+    <div class="float-right">
+      <input
+        type="submit"
+        value="Sign In"
+        id="sign-in-btn"
+        class="sign-in-bt btn btn-outline-secondary new-cluck-btn"
+      />
+    </div>
+  </div>
+</form>
+
+<%- include('../partials/footer.ejs') %>
